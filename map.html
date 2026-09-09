@@ -51,6 +51,8 @@
     var params = new URLSearchParams(location.search);
     // 优先用 URL ?key= 传入，否则用下方常量（请替换成你自己的高德 Web 端 Key）
     var AMAP_KEY = params.get('key') || 'YOUR_AMAP_WEB_KEY';
+    // 2021年12月后申请的 Key 必须带「安全密钥」securityJsCode，否则白屏
+    var AMAP_SECURITY = params.get('security') || '';
     var CENTER = [parseFloat(params.get('lng')) || 120.401, parseFloat(params.get('lat')) || 27.625];
 
     function showErr(msg) {
@@ -61,6 +63,7 @@
 
     if (!window.AMapLoader) { showErr('高德 loader 未加载（检查网络/域名）'); }
     else {
+      if (AMAP_SECURITY) window._AMapSecurityConfig = { securityJsCode: AMAP_SECURITY };
       AMapLoader.load({
         key: AMAP_KEY,
         version: '2.0',
