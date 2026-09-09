@@ -1,0 +1,220 @@
+{
+  "roads": [
+    {
+      "status": "smooth", 
+      "incident": "", 
+      "polyline": [
+        [
+          120.401406, 
+          27.628414
+        ], 
+        [
+          120.405461, 
+          27.628414
+        ]
+      ], 
+      "name": "江山西路", 
+      "lengthM": 2200, 
+      "limit": 50, 
+      "speed": 44, 
+      "id": "js-x", 
+      "dir": "水头老街 ⇄ 镇中心转盘", 
+      "cls": "trunk"
+    }, 
+    {
+      "status": "slow", 
+      "incident": "早高峰过境货车多，建议错峰通行", 
+      "polyline": [
+        [
+          120.405461, 
+          27.628414
+        ], 
+        [
+          120.410733, 
+          27.628414
+        ]
+      ], 
+      "name": "江山东路", 
+      "lengthM": 2600, 
+      "limit": 50, 
+      "speed": 34, 
+      "id": "js-d", 
+      "dir": "镇中心转盘 ⇄ 皮革城东区", 
+      "cls": "trunk"
+    }, 
+    {
+      "status": "smooth", 
+      "incident": "", 
+      "polyline": [
+        [
+          120.404042, 
+          27.626078
+        ], 
+        [
+          120.404042, 
+          27.628414
+        ]
+      ], 
+      "name": "振兴北路", 
+      "lengthM": 1800, 
+      "limit": 60, 
+      "speed": 48, 
+      "id": "zx-n", 
+      "dir": "新城商厦 ⇄ 江山路口", 
+      "cls": "trunk"
+    }, 
+    {
+      "status": "slow", 
+      "incident": "商圈沿街车流密集，注意避让行人", 
+      "polyline": [
+        [
+          120.404042, 
+          27.628414
+        ], 
+        [
+          120.404042, 
+          27.633085
+        ]
+      ], 
+      "name": "振兴中路", 
+      "lengthM": 2400, 
+      "limit": 50, 
+      "speed": 24, 
+      "id": "zx-m", 
+      "dir": "江山路口 ⇄ 镇前街商圈", 
+      "cls": "trunk"
+    }, 
+    {
+      "status": "smooth", 
+      "incident": "", 
+      "polyline": [
+        [
+          120.402217, 
+          27.629492
+        ], 
+        [
+          120.409922, 
+          27.629492
+        ]
+      ], 
+      "name": "水头大桥·带溪跨江", 
+      "lengthM": 800, 
+      "limit": 60, 
+      "speed": 46, 
+      "id": "bridge", 
+      "dir": "南岸老街 ⇄ 北岸新城区", 
+      "cls": "trunk"
+    }, 
+    {
+      "status": "smooth", 
+      "incident": "", 
+      "polyline": [
+        [
+          120.4083, 
+          27.626437
+        ], 
+        [
+          120.4083, 
+          27.632366
+        ]
+      ], 
+      "name": "财富大道", 
+      "lengthM": 3800, 
+      "limit": 60, 
+      "speed": 38, 
+      "id": "caifu", 
+      "dir": "皮革城 ⇄ 工业南区", 
+      "cls": "trunk"
+    }, 
+    {
+      "status": "smooth", 
+      "incident": "", 
+      "polyline": [
+        [
+          120.402521, 
+          27.626797
+        ], 
+        [
+          120.402521, 
+          27.629222
+        ]
+      ], 
+      "name": "凤林路", 
+      "lengthM": 1500, 
+      "limit": 40, 
+      "speed": 40, 
+      "id": "fl", 
+      "dir": "北湖公园 ⇄ 江山西路口", 
+      "cls": "secondary"
+    }, 
+    {
+      "status": "smooth", 
+      "incident": "", 
+      "polyline": [
+        [
+          120.405461, 
+          27.627695
+        ], 
+        [
+          120.4083, 
+          27.627695
+        ]
+      ], 
+      "name": "站西路", 
+      "lengthM": 1600, 
+      "limit": 40, 
+      "speed": 36, 
+      "id": "zwx", 
+      "dir": "镇中心转盘 ⇄ 水头客运站", 
+      "cls": "secondary"
+    }, 
+    {
+      "status": "congested", 
+      "incident": "老街集市早高峰人流车流交织", 
+      "polyline": [
+        [
+          120.403433, 
+          27.631288
+        ], 
+        [
+          120.407083, 
+          27.631288
+        ]
+      ], 
+      "name": "江桥路", 
+      "lengthM": 1400, 
+      "limit": 40, 
+      "speed": 18, 
+      "id": "jq", 
+      "dir": "老江桥 ⇄ 农贸市场", 
+      "cls": "secondary"
+    }, 
+    {
+      "status": "slow", 
+      "incident": "", 
+      "polyline": [
+        [
+          120.402419, 
+          27.629923
+        ], 
+        [
+          120.409719, 
+          27.629923
+        ]
+      ], 
+      "name": "带溪滨水绿道", 
+      "lengthM": 2600, 
+      "limit": 40, 
+      "speed": 30, 
+      "id": "bin", 
+      "dir": "带溪绿道 ⇄ 滨水健身步道", 
+      "cls": "secondary"
+    }
+  ], 
+  "source": "OpenStreetMap（内置拓扑近似占位，待 fetch_roads Action 用真实 OSM 覆盖）", 
+  "center": [
+    120.401, 
+    27.625
+  ], 
+  "updatedAt": "2026-09-09T19:45:00+08:00"
+}
