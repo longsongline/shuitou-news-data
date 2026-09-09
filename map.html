@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>水头镇 · 3D 数字孪生路网</title>
+  <style>
+    html, body, #map { height: 100%; margin: 0; padding: 0; }
+    body { background: #0b1220; font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+    #map { width: 100%; height: 100%; }
+    .hud {
+      position: fixed; left: 16px; top: 16px; z-index: 10;
+      background: rgba(15,23,42,0.78); color: #e2e8f0; backdrop-filter: blur(6px);
+      border: 1px solid rgba(148,163,184,0.25); border-radius: 14px;
+      padding: 12px 16px; max-width: 70vw; box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    }
+    .hud h1 { font-size: 16px; margin: 0 0 4px; color: #38bdf8; letter-spacing: 1px; }
+    .hud p { font-size: 12px; margin: 2px 0; color: #cbd5e1; }
+    .legend { display: flex; gap: 14px; margin-top: 8px; font-size: 12px; }
+    .legend span { display: flex; align-items: center; gap: 5px; }
+    .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+    .bar { position: fixed; right: 16px; bottom: 20px; z-index: 10; display: flex; gap: 10px; }
+    .bar button {
+      background: rgba(15,23,42,0.8); color: #e2e8f0; border: 1px solid rgba(148,163,184,0.3);
+      border-radius: 10px; padding: 8px 12px; font-size: 13px;
+    }
+    .bar button.on { background: #0ea5e9; border-color: #0ea5e9; color: #fff; }
+    #err { position: fixed; inset: 0; display: none; align-items: center; justify-content: center;
+      color: #fca5a5; font-size: 14px; padding: 24px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <div class="hud">
+    <h1>水头镇 · 3D 数字孪生路网</h1>
+    <p>真实地理底图 · 拖动旋转 / 双指缩放</p>
+    <div class="legend">
+      <span><i class="dot" style="background:#10B981"></i>畅通</span>
+      <span><i class="dot" style="background:#F59E0B"></i>缓行</span>
+      <span><i class="dot" style="background:#EF4444"></i>拥堵</span>
+    </div>
+  </div>
+  <div class="bar">
+    <button id="btnTraffic" class="on">实时路况</button>
+    <button id="btnReset">复位视角</button>
+  </div>
+  <div id="err"></div>
+
+  <script src="https://webapi.amap.com/loader.js"></script>
+  <script>
+    var params = new URLSearchParams(location.search);
+    // 优先用 URL ?key= 传入，否则用下方常量（请替换成你自己的高德 Web 端 Key）
+    var AMAP_KEY = params.get('key') || 'YOUR_AMAP_WEB_KEY';
+    var CENTER = [parseFloat(params.get('lng')) || 120.401, parseFloat(params.get('lat')) || 27.625];
+
+    function showErr(msg) {
+      var e = document.getElementById('err');
+      e.style.display = 'flex';
+      e.textContent = '地图加载失败：' + msg + '\n（请确认：①高德 Key 已填且为 Web 端；②高德控制台已添加授权域名 longsongline.github.io）';
+    }
+
+    if (!window.AMapLoader) { showErr('高德 loader 未加载（检查网络/域名）'); }
+    else {
+      AMapLoader.load({
+        key: AMAP_KEY,
+        version: '2.0',
+        plugins: ['AMap.Buildings', 'AMap.Traffic', 'AMap.Scale']
+      }).then(function (AMap) {
+        var map = new AMap.Map('map', {
+          viewMode: '3D',
+          pitch: 55,
+          rotation: 18,
+          zoom: 14,
+          center: CENTER,
+          mapStyle: 'amap://styles/darkblue',
+          showBuildingBlock: true
+        });
+        window._map = map;
+
+        // 3D 楼块
+        var buildings = new AMap.Buildings({ zooms: [14, 20], heightFactor: 1 });
+        map.add(buildings);
+
+        // 实时路况图层
+        var traffic = new AMap.Traffic({ autoRefresh: true, interval: 180 });
+        map.add(traffic);
+        window._traffic = traffic;
+
+        map.addControl(new AMap.Scale());
+
+        document.getElementById('btnTraffic').onclick = function () {
+          if (map.getLayers().indexOf(traffic) >= 0) {
+            map.remove(traffic); this.classList.remove('on');
+          } else {
+            map.add(traffic); this.classList.add('on');
+          }
+        };
+        document.getElementById('btnReset').onclick = function () {
+          map.setPitch(55); map.setRotation(18); map.setZoom(14); map.setCenter(CENTER);
+        };
+      }).catch(function (e) { showErr(e && e.message ? e.message : e); });
+    }
+  </script>
+</body>
+</html>
