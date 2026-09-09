@@ -67,7 +67,7 @@
       AMapLoader.load({
         key: AMAP_KEY,
         version: '2.0',
-        plugins: ['AMap.Buildings', 'AMap.Traffic', 'AMap.Scale']
+        plugins: ['AMap.Buildings', 'AMap.TileLayer.Traffic', 'AMap.Scale']
       }).then(function (AMap) {
         var map = new AMap.Map('map', {
           viewMode: '3D',
@@ -84,8 +84,8 @@
         var buildings = new AMap.Buildings({ zooms: [14, 20], heightFactor: 1 });
         map.add(buildings);
 
-        // 实时路况图层
-        var traffic = new AMap.Traffic({ autoRefresh: true, interval: 180 });
+        // 实时路况图层（高德 JS API 2.0 类名为 AMap.TileLayer.Traffic）
+        var traffic = new AMap.TileLayer.Traffic({ autoRefresh: true, interval: 180 });
         map.add(traffic);
         window._traffic = traffic;
 
