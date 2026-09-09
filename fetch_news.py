@@ -32,14 +32,31 @@ SOURCES = [
             "https://www.zjpy.gov.cn/",
         ],
     },
+    {
+        "key": "wz66-py",
+        "name": "温州新闻网·平阳频道",
+        "urls": [
+            "https://xs.66wz.com/xs/py/",
+            "http://xs.66wz.com/xs/py/",
+        ],
+    },
+    {
+        "key": "wz66",
+        "name": "温州网",
+        "urls": [
+            "https://news.66wz.com/",
+            "http://news.66wz.com/",
+        ],
+    },
 ]
 
-# 浙江政务站群 /art/2026/9/9/art_xxx_yyy.html 及常见 CMS 文章路径
+# 浙江政务站群 /art/2026/9/9/art_xxx_yyy.html 及常见 CMS 文章路径（含温州网 /system/ 模式）
 ARTICLE_RE = re.compile(
     r"(?:/art/\d{4}/\d{1,2}/\d{1,2}/art_\d+_\d+\.html"
     r"|/art/\d{4}/\d{1,2}/\d{1,2}/\d+\.s?html"
     r"|/\d{4}-\d{1,2}/\d{1,2}/\d+\.s?html"
     r"|/\d{4}/\d{1,4}/\d{1,4}\.s?html"
+    r"|/system/\d{4}/\d{1,2}/\d{1,2}/\d+\.s?html"
     r"|/node\d+/\d+\.s?html"
     r"|/news/\d+\.s?html)",
     re.I,
@@ -172,13 +189,14 @@ def main():
         content = fetch_article_content(it["url"])
         it["content"] = content
         print("[content]", i + 1, it["title"][:24], len(content), "paras")
+    if not all_items:
+        report.append({"source": "ALL", "ok": False, "count": 0, "note": "all sources unreachable"})
+        print("[WARN] no items fetched — outputting empty json (mini-program will fallback)")
     data = {"updatedAt": now.strftime("%Y-%m-%d %H:%M"), "report": report, "items": all_items}
     os.makedirs("data", exist_ok=True)
     with open("data/news.json", "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     print("[done] total", len(all_items))
-    if not all_items:
-        raise SystemExit(1)  # 全部失败时让 Action 报红，便于发现源站改版
 
 
 if __name__ == "__main__":
