@@ -22,6 +22,16 @@
     .legend { display: flex; gap: 14px; margin-top: 8px; font-size: 12px; }
     .legend span { display: flex; align-items: center; gap: 5px; }
     .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+    .roadlist { position: fixed; left: 12px; bottom: 84px; z-index: 10; max-width: 66vw; max-height: 42vh; overflow-y: auto;
+      background: rgba(15,23,42,0.82); color: #e2e8f0; border: 1px solid rgba(148,163,184,0.25); border-radius: 12px;
+      padding: 10px 12px; font-size: 12px; backdrop-filter: blur(6px); box-shadow: 0 8px 24px rgba(0,0,0,0.35); }
+    .rl-head { font-size: 12px; color: #38bdf8; margin-bottom: 6px; font-weight: bold; }
+    .rl-item { display: flex; align-items: center; gap: 6px; padding: 5px 0; border-top: 1px solid rgba(255,255,255,0.08); }
+    .rl-item:first-of-type { border-top: none; }
+    .rl-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .rl-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .rl-speed { font-weight: bold; }
+    .rl-status { width: 34px; text-align: right; }
     .bar { position: fixed; right: 16px; bottom: 20px; z-index: 10; display: flex; gap: 10px; }
     .bar button {
       background: rgba(15,23,42,0.8); color: #e2e8f0; border: 1px solid rgba(148,163,184,0.3);
@@ -44,6 +54,7 @@
       <span><i class="dot" style="background:#EF4444"></i>拥堵</span>
     </div>
   </div>
+  <div class="roadlist" id="roadlist" style="display:none;"></div>
   <div class="bar">
     <button id="btnTraffic" class="on">实时路况</button>
     <button id="btnSat">卫星图</button>
@@ -56,10 +67,14 @@
     var params = new URLSearchParams(location.search);
     var AMAP_KEY = params.get('key') || 'YOUR_AMAP_WEB_KEY';
     var AMAP_SECURITY = params.get('security') || '';
+    var WEBKEY = params.get('webkey') || '';
     var CENTER = [parseFloat(params.get('lng')) || 120.401, parseFloat(params.get('lat')) || 27.625];
     var ZOOM = parseFloat(params.get('zoom')) || (params.get('name') ? 18 : 14);
     var SHOP_NAME = params.get('name') || '';
     var SHOP_ADDR = params.get('addr') || '';
+
+    // 水头镇主干道（用于调高德交通态势接口，获取路段实时车速文字）
+    var ROADS = ['江山西路', '江山东路', '振兴北路', '振兴中路', '水头大桥', '财富大道', '凤林路', '站西路', '江桥路', '带溪'];
 
     function showErr(msg) {
       var e = document.getElementById('err');
@@ -72,6 +87,21 @@
       var t = pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds());
       document.getElementById('liveText').textContent = '实时路况已开启 · 更新于 ' + t;
     }
+    function renderRoadList(list) {
+      var el = document.getElementById('roadlist');
+      if (!list || !list.length) { el.style.display = 'none'; return; }
+      var html = '<div class="rl-head">📊 路段实时车速（高德交通态势）</div>';
+      list.forEach(function (r) {
+        var sm = r.status === 'smooth' ? '畅通' : r.status === 'slow' ? '缓行' : '拥堵';
+        var c = r.status === 'smooth' ? '#10B981' : r.status === 'slow' ? '#F59E0B' : '#EF4444';
+        html += '<div class="rl-item"><span class="rl-dot" style="background:' + c + '"></span>'
+          + '<span class="rl-name">' + r.name + '</span>'
+          + '<span class="rl-speed" style="color:' + c + '">' + r.speed + 'km/h</span>'
+          + '<span class="rl-status" style="color:' + c + '">' + sm + '</span></div>';
+      });
+      el.innerHTML = html;
+      el.style.display = 'block';
+    }
 
     if (!window.AMapLoader) { showErr('高德 loader 未加载（检查网络/域名）'); }
     else {
@@ -79,25 +109,18 @@
       AMapLoader.load({
         key: AMAP_KEY,
         version: '2.0',
-        plugins: ['AMap.Buildings', 'AMap.TileLayer.Traffic', 'AMap.Scale']
+        plugins: ['AMap.Buildings', 'AMap.TileLayer.Traffic', 'AMap.Scale', 'AMap.Text']
       }).then(function (AMap) {
         var map = new AMap.Map('map', {
-          viewMode: '3D',
-          pitch: 55,
-          rotation: 18,
-          zoom: ZOOM,
-          center: CENTER,
-          mapStyle: 'amap://styles/darkblue',
-          showBuildingBlock: true
+          viewMode: '3D', pitch: 55, rotation: 18, zoom: ZOOM, center: CENTER,
+          mapStyle: 'amap://styles/darkblue', showBuildingBlock: true
         });
         window._map = map;
 
-        // 店面默认点：打标记 + 店名标签 + 信息窗
         if (SHOP_NAME) {
           var marker = new AMap.Marker({ position: CENTER, title: SHOP_NAME, anchor: 'bottom-center' });
           marker.setLabel({
-            direction: 'top',
-            offset: new AMap.Pixel(0, -12),
+            direction: 'top', offset: new AMap.Pixel(0, -12),
             content: '<div style="padding:2px 8px;background:#0ea5e9;color:#fff;border-radius:6px;font-size:12px;white-space:nowrap;">' + SHOP_NAME + '</div>'
           });
           map.add(marker);
@@ -108,11 +131,9 @@
           info.open(map, CENTER);
         }
 
-        // 3D 楼块
         var buildings = new AMap.Buildings({ zooms: [14, 20], heightFactor: 1 });
         map.add(buildings);
 
-        // 实时路况图层（高德 JS API 2.0 类名为 AMap.TileLayer.Traffic，每 3 分钟自动刷新）
         var traffic = new AMap.TileLayer.Traffic({ autoRefresh: true, interval: 180 });
         map.add(traffic);
         window._traffic = traffic;
@@ -140,6 +161,50 @@
         document.getElementById('btnReset').onclick = function () {
           map.setPitch(55); map.setRotation(18); map.setZoom(ZOOM); map.setCenter(CENTER);
         };
+
+        // 文字级实时数据：调高德交通态势，画彩色路线 + 列表
+        if (WEBKEY) loadRoadStatus(WEBKEY, AMap, map);
+
+        function loadRoadStatus(webkey, AMap, map) {
+          var CITY = '平阳县';
+          var COLOR = { smooth: '#10B981', slow: '#F59E0B', congested: '#EF4444' };
+          var results = [];
+          function next(i) {
+            if (i >= ROADS.length) { renderRoadList(results); return; }
+            var name = ROADS[i];
+            var url = 'https://restapi.amap.com/v3/traffic/status/road?key=' + encodeURIComponent(webkey)
+              + '&name=' + encodeURIComponent(name) + '&city=' + encodeURIComponent(CITY) + '&extensions=all';
+            fetch(url).then(function (r) { return r.json(); }).then(function (j) {
+              try {
+                if (j.status === '1' && j.trafficinfo && j.trafficinfo.roads && j.trafficinfo.roads.length) {
+                  var rd = j.trafficinfo.roads[0];
+                  var st = String(rd.status);
+                  var status = st === '0' ? 'smooth' : st === '1' ? 'slow' : 'congested';
+                  var speed = parseInt(rd.speed, 10) || 0;
+                  var line = [];
+                  if (rd.polyline) {
+                    rd.polyline.split(';').forEach(function (s) {
+                      var c = s.split(',');
+                      if (c.length === 2) line.push([parseFloat(c[0]), parseFloat(c[1])]);
+                    });
+                  }
+                  if (line.length >= 2) {
+                    var pl = new AMap.Polyline({ path: line, strokeColor: COLOR[status], strokeWeight: 7, strokeOpacity: 0.95, zIndex: 50 });
+                    map.add(pl);
+                    var mid = line[Math.floor(line.length / 2)];
+                    var txt = new AMap.Text({
+                      text: '<div style="padding:2px 8px;background:rgba(15,23,42,0.85);color:' + COLOR[status] + ';border-radius:6px;font-size:12px;white-space:nowrap;">' + (rd.name || name) + ' ' + speed + 'km/h</div>',
+                      position: mid, offset: new AMap.Pixel(-36, -18), zIndex: 60
+                    });
+                    map.add(txt);
+                  }
+                  results.push({ name: rd.name || name, status: status, speed: speed });
+                }
+              } catch (e) {}
+            }).catch(function () {}).then(function () { next(i + 1); });
+          }
+          next(0);
+        }
       }).catch(function (e) { showErr(e && e.message ? e.message : e); });
     }
   </script>
