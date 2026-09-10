@@ -54,6 +54,10 @@
     // 2021年12月后申请的 Key 必须带「安全密钥」securityJsCode，否则白屏
     var AMAP_SECURITY = params.get('security') || '';
     var CENTER = [parseFloat(params.get('lng')) || 120.401, parseFloat(params.get('lat')) || 27.625];
+    // 店面默认点：传 name 时自动拉近到店面级别（zoom 18），否则全镇视角
+    var ZOOM = parseFloat(params.get('zoom')) || (params.get('name') ? 18 : 14);
+    var SHOP_NAME = params.get('name') || '';
+    var SHOP_ADDR = params.get('addr') || '';
 
     function showErr(msg) {
       var e = document.getElementById('err');
@@ -73,12 +77,28 @@
           viewMode: '3D',
           pitch: 55,
           rotation: 18,
-          zoom: 14,
+          zoom: ZOOM,
           center: CENTER,
           mapStyle: 'amap://styles/darkblue',
           showBuildingBlock: true
         });
         window._map = map;
+
+        // 店面默认点：打标记 + 店名标签 + 信息窗
+        if (SHOP_NAME) {
+          var marker = new AMap.Marker({ position: CENTER, title: SHOP_NAME, anchor: 'bottom-center' });
+          marker.setLabel({
+            direction: 'top',
+            offset: new AMap.Pixel(0, -12),
+            content: '<div style="padding:2px 8px;background:#0ea5e9;color:#fff;border-radius:6px;font-size:12px;white-space:nowrap;">' + SHOP_NAME + '</div>'
+          });
+          map.add(marker);
+          var infoHtml = '<div style="min-width:140px;font-size:13px;color:#0f172a;"><b style="color:#0369a1;">' + SHOP_NAME + '</b>';
+          if (SHOP_ADDR) infoHtml += '<br><span style="color:#475569;">' + SHOP_ADDR + '</span>';
+          infoHtml += '</div>';
+          var info = new AMap.InfoWindow({ content: infoHtml, offset: new AMap.Pixel(0, -28), closeWhenClickMap: true });
+          info.open(map, CENTER);
+        }
 
         // 3D 楼块
         var buildings = new AMap.Buildings({ zooms: [14, 20], heightFactor: 1 });
