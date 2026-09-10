@@ -1,0 +1,16 @@
+{
+  "updatedAt": "2026-09-10 14:00",
+  "source": "水头本地产业招工示例（待 BOSS 直聘爬虫接入）",
+  "jobs": [
+    { "title": "皮革大厂 · 样板主管", "salary": "8000-12000元/月", "company": "水头某皮革有限公司", "city": "温州", "district": "平阳·水头", "experience": "3年以上", "education": "高中", "tags": ["🔥急聘", "包吃住"] },
+    { "title": "皮件电商主播", "salary": "6000-15000元/月", "company": "中国皮都电商基地", "city": "温州", "district": "平阳·水头", "experience": "1年", "education": "不限", "tags": ["高提成", "弹性"] },
+    { "title": "跨境电商运营", "salary": "5000-9000元/月", "company": "水头皮件外贸公司", "city": "温州", "district": "平阳·水头", "experience": "1-3年", "education": "大专", "tags": ["五险", "13薪"] },
+    { "title": "新城超市 · 店长助手", "salary": "4500-6000元/月", "company": "新城商厦超市", "city": "温州", "district": "平阳·水头", "experience": "1年", "education": "高中", "tags": ["就近", "轮休"] },
+    { "title": "水头客运站 · 售票员", "salary": "4000-5000元/月", "company": "水头客运中心", "city": "温州", "district": "平阳·水头", "experience": "不限", "education": "高中", "tags": ["稳定"] },
+    { "title": "带溪绿道 · 秩序巡逻", "salary": "3500-4500元/月", "company": "水头镇市政", "city": "温州", "district": "平阳·水头", "experience": "不限", "education": "不限", "tags": ["轻松"] },
+    { "title": "农机维修工", "salary": "6000-8000元/月", "company": "水头农机服务站", "city": "温州", "district": "平阳·水头", "experience": "2年", "education": "不限", "tags": ["技术岗"] },
+    { "title": "快递驿站店员", "salary": "4000-5500元/月", "company": "水头中通驿站", "city": "温州", "district": "平阳·水头", "experience": "不限", "education": "不限", "tags": ["就近"] },
+    { "title": "餐饮服务员", "salary": "3800-4500元/月", "company": "江山时代广场餐饮", "city": "温州", "district": "平阳·水头", "experience": "不限", "education": "不限", "tags": ["包吃"] },
+    { "title": "皮都保洁员", "salary": "3000-4000元/月", "company": "中国皮都物业", "city": "温州", "district": "平阳·水头", "experience": "不限", "education": "不限", "tags": ["自由"] }
+  ]
+}
