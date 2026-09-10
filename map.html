@@ -12,10 +12,13 @@
       position: fixed; left: 16px; top: 16px; z-index: 10;
       background: rgba(15,23,42,0.78); color: #e2e8f0; backdrop-filter: blur(6px);
       border: 1px solid rgba(148,163,184,0.25); border-radius: 14px;
-      padding: 12px 16px; max-width: 70vw; box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      padding: 12px 16px; max-width: 74vw; box-shadow: 0 8px 24px rgba(0,0,0,0.35);
     }
     .hud h1 { font-size: 16px; margin: 0 0 4px; color: #38bdf8; letter-spacing: 1px; }
     .hud p { font-size: 12px; margin: 2px 0; color: #cbd5e1; }
+    .status { font-size: 12px; margin-top: 8px; color: #cbd5e1; display: flex; align-items: center; gap: 6px; }
+    .live { width: 8px; height: 8px; border-radius: 50%; background: #10b981; box-shadow: 0 0 8px #10b981; animation: pulse 1.6s infinite; }
+    @keyframes pulse { 0%{opacity:1} 50%{opacity:.3} 100%{opacity:1} }
     .legend { display: flex; gap: 14px; margin-top: 8px; font-size: 12px; }
     .legend span { display: flex; align-items: center; gap: 5px; }
     .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
@@ -34,6 +37,7 @@
   <div class="hud">
     <h1>水头镇 · 3D 数字孪生路网</h1>
     <p>真实地理底图 · 拖动旋转 / 双指缩放</p>
+    <div class="status"><span class="live"></span><span id="liveText">实时路况已开启 · 更新于 --:--:--</span></div>
     <div class="legend">
       <span><i class="dot" style="background:#10B981"></i>畅通</span>
       <span><i class="dot" style="background:#F59E0B"></i>缓行</span>
@@ -42,6 +46,7 @@
   </div>
   <div class="bar">
     <button id="btnTraffic" class="on">实时路况</button>
+    <button id="btnSat">卫星图</button>
     <button id="btnReset">复位视角</button>
   </div>
   <div id="err"></div>
@@ -49,12 +54,9 @@
   <script src="https://webapi.amap.com/loader.js"></script>
   <script>
     var params = new URLSearchParams(location.search);
-    // 优先用 URL ?key= 传入，否则用下方常量（请替换成你自己的高德 Web 端 Key）
     var AMAP_KEY = params.get('key') || 'YOUR_AMAP_WEB_KEY';
-    // 2021年12月后申请的 Key 必须带「安全密钥」securityJsCode，否则白屏
     var AMAP_SECURITY = params.get('security') || '';
     var CENTER = [parseFloat(params.get('lng')) || 120.401, parseFloat(params.get('lat')) || 27.625];
-    // 店面默认点：传 name 时自动拉近到店面级别（zoom 18），否则全镇视角
     var ZOOM = parseFloat(params.get('zoom')) || (params.get('name') ? 18 : 14);
     var SHOP_NAME = params.get('name') || '';
     var SHOP_ADDR = params.get('addr') || '';
@@ -63,6 +65,12 @@
       var e = document.getElementById('err');
       e.style.display = 'flex';
       e.textContent = '地图加载失败：' + msg + '\n（请确认：①高德 Key 已填且为 Web 端；②高德控制台已添加授权域名 longsongline.github.io）';
+    }
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    function tick() {
+      var d = new Date();
+      var t = pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds());
+      document.getElementById('liveText').textContent = '实时路况已开启 · 更新于 ' + t;
     }
 
     if (!window.AMapLoader) { showErr('高德 loader 未加载（检查网络/域名）'); }
@@ -104,22 +112,33 @@
         var buildings = new AMap.Buildings({ zooms: [14, 20], heightFactor: 1 });
         map.add(buildings);
 
-        // 实时路况图层（高德 JS API 2.0 类名为 AMap.TileLayer.Traffic）
+        // 实时路况图层（高德 JS API 2.0 类名为 AMap.TileLayer.Traffic，每 3 分钟自动刷新）
         var traffic = new AMap.TileLayer.Traffic({ autoRefresh: true, interval: 180 });
         map.add(traffic);
         window._traffic = traffic;
 
         map.addControl(new AMap.Scale());
 
+        tick();
+        setInterval(tick, 1000);
+
         document.getElementById('btnTraffic').onclick = function () {
           if (map.getLayers().indexOf(traffic) >= 0) {
             map.remove(traffic); this.classList.remove('on');
+            document.getElementById('liveText').textContent = '实时路况已关闭';
           } else {
-            map.add(traffic); this.classList.add('on');
+            map.add(traffic); this.classList.add('on'); tick();
           }
         };
+        var sat = false;
+        document.getElementById('btnSat').onclick = function () {
+          sat = !sat;
+          map.setMapStyle(sat ? 'amap://styles/satellite' : 'amap://styles/darkblue');
+          this.classList.toggle('on', sat);
+          this.textContent = sat ? '路网图' : '卫星图';
+        };
         document.getElementById('btnReset').onclick = function () {
-          map.setPitch(55); map.setRotation(18); map.setZoom(14); map.setCenter(CENTER);
+          map.setPitch(55); map.setRotation(18); map.setZoom(ZOOM); map.setCenter(CENTER);
         };
       }).catch(function (e) { showErr(e && e.message ? e.message : e); });
     }
