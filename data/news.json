@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-09-22 09:44",
+  "updatedAt": "2026-09-23 09:41",
   "report": [
     {
       "source": "平阳新闻网",
       "ok": true,
-      "count": 74
+      "count": 75
     },
     {
       "source": "平阳县人民政府网",
@@ -19,7 +19,7 @@
     {
       "source": "温州网",
       "ok": true,
-      "count": 62
+      "count": 60
     }
   ],
   "items": [
@@ -739,30 +739,142 @@
       ]
     },
     {
-      "id": "451835ad3a8e",
-      "title": "写在习近平主席对美国进行国事访问之际",
-      "url": "http://www.wzpy.cn/system/2026/09/22/015590829.shtml",
+      "id": "f09fa8e82f47",
+      "title": "习近平主席引领推进中美人民友好事业的故事",
+      "url": "http://www.wzpy.cn/system/2026/09/23/015591364.shtml",
       "date": "",
       "source": "平阳新闻网"
     },
     {
-      "id": "8f3165a9310e",
-      "title": "看图学习丨“中华民族大厦的基石、栋梁” 总书记为他们点赞",
-      "url": "http://www.wzpy.cn/system/2026/09/22/015590848.shtml",
+      "id": "6810baa58d01",
+      "title": "传习录丨推动中美关系这艘巨轮 沿着正确航道平稳前行",
+      "url": "http://www.wzpy.cn/system/2026/09/23/015591367.shtml",
       "date": "",
       "source": "平阳新闻网"
     },
     {
-      "id": "6cfab006f83d",
-      "title": "学习笔记 | 丰收时节，感悟总书记对“三农”的关切",
-      "url": "http://www.wzpy.cn/system/2026/09/22/015590853.shtml",
+      "id": "e6a31a22927f",
+      "title": "拾光纪·“把我们的农民扶一把”，读懂总书记的“三农”瞩望",
+      "url": "http://www.wzpy.cn/system/2026/09/23/015591370.shtml",
       "date": "",
       "source": "平阳新闻网"
     },
     {
-      "id": "baa65b9bd67a",
-      "title": "中共中央政治局召开会议 讨论拟提请二十届五中全会审议的文件 中共中央总书记习近平主持会议",
-      "url": "http://www.wzpy.cn/system/2026/09/21/015590496.shtml",
+      "id": "866d19679b84",
+      "title": "习言道｜从习近平一封封信件中看中美人民友谊",
+      "url": "http://www.wzpy.cn/system/2026/09/23/015591375.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "cfb9da612ce9",
+      "title": "领航丨绘就山河新“丰”景",
+      "url": "http://www.wzpy.cn/system/2026/09/22/015591140.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "0ee842d9b65f",
+      "title": "美国各界对习近平主席国事访问充满期待",
+      "url": "http://www.wzpy.cn/system/2026/09/22/015591148.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "63c0e047506c",
+      "title": "微视频｜合力筑就繁荣世界",
+      "url": "http://www.wzpy.cn/system/2026/09/22/015591152.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "aac958106dee",
+      "title": "遇见习近平丨跨越山海，续写“鼓岭情缘”",
+      "url": "http://www.wzpy.cn/system/2026/09/22/015591014.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "91f0b770d674",
+      "title": "习近平主席这样阐释中美相处之道",
+      "url": "http://www.wzpy.cn/system/2026/09/22/015591025.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "2dfc24357c7f",
+      "title": "人民日报重磅视频｜建设性战略稳定",
+      "url": "http://www.wzpy.cn/system/2026/09/22/015591041.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "483f77a7d555",
+      "title": "视频丨国际人士期待习近平主席对美国进行国事访问",
+      "url": "http://www.wzpy.cn/system/2026/09/23/015591380.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "75ba03d480cd",
+      "title": "第1视点｜在交流交往中促进相知相亲",
+      "url": "http://www.wzpy.cn/system/2026/09/23/015591384.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "8e6661a1090c",
+      "title": "新思想引领新征程丨坚持预防为主 守护全民健康",
+      "url": "http://www.wzpy.cn/system/2026/09/23/015591396.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "083e447bb188",
+      "title": "王浩刘捷等到2026杭州·云栖大会巡馆 加快打造人工智能创新发展高地 全力推动创新浙江建设全面成势",
+      "url": "http://www.wzpy.cn/system/2026/09/22/015591166.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "8b0a471f007f",
+      "title": "省十四届人大常委会举行第二十六次会议 王浩出席",
+      "url": "http://www.wzpy.cn/system/2026/09/22/015591170.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "6488b1cf2d08",
+      "title": "杭州新八骏，香江闹“海",
+      "url": "http://www.wzpy.cn/system/2026/09/22/015591173.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "a717d2497798",
+      "title": "科技硬实力支撑 浙江民企连续三年斩获“大满贯",
+      "url": "http://www.wzpy.cn/system/2026/09/22/015591181.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "54dea0a88b9f",
+      "title": "政在看丨一图读懂浙江入境游全链条“八个一”便利化改革",
+      "url": "http://www.wzpy.cn/system/2026/09/22/015591183.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "7af5f4980338",
+      "title": "从数字浙江到数贸高地 “浙”里实干作答",
+      "url": "http://www.wzpy.cn/system/2026/09/22/015591193.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "a66095e793c2",
+      "title": "云栖+数贸会两场盛会“叠buff” 杭州把AI故事讲实了",
+      "url": "http://www.wzpy.cn/system/2026/09/22/015591195.shtml",
       "date": "",
       "source": "平阳新闻网"
     },
@@ -781,114 +893,23 @@
       "source": "平阳新闻网"
     },
     {
-      "id": "42f835e03a6c",
-      "title": "习近平将对美国进行国事访问",
-      "url": "http://www.wzpy.cn/system/2026/09/21/015590582.shtml",
+      "id": "946e3c97579d",
+      "title": "平阳协同大道，通车时间定了！",
+      "url": "http://www.wzpy.cn/system/2026/09/22/015590922.shtml",
       "date": "",
       "source": "平阳新闻网"
     },
     {
-      "id": "0b1158d786d3",
-      "title": "习近平复信美国10所高校青年学生",
-      "url": "http://www.wzpy.cn/system/2026/09/21/015590586.shtml",
+      "id": "1d7633a472d0",
+      "title": "【要闻】孟晓斌督查南雁荡山片区文旅项目建设并检查节前文旅安全工作",
+      "url": "http://www.wzpy.cn/system/2026/09/22/015590941.shtml",
       "date": "",
       "source": "平阳新闻网"
     },
     {
-      "id": "1b75955c2a2f",
-      "title": "习近平将对美国进行国事访问",
-      "url": "http://www.wzpy.cn/system/2026/09/21/015590533.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "dea7d7aa8f63",
-      "title": "天天学习｜年轻的事业",
-      "url": "http://www.wzpy.cn/system/2026/09/21/015590540.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "4dd100f6c5e2",
-      "title": "为了共同繁荣的梦想——习近平主席引领全球发展倡议造福世界",
-      "url": "http://www.wzpy.cn/system/2026/09/21/015590289.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "dae347d35f5f",
-      "title": "【习声回响·聆听温暖中国】蜀乡“战旗”红 坊间万象新",
-      "url": "http://www.wzpy.cn/system/2026/09/21/015590293.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "7bd8685d4b0a",
-      "title": "省委常委会召开会议 认真学习贯彻习近平总书记重要讲话重要指示精神 研究我省贯彻落实意见 省委书记王浩主持",
-      "url": "http://www.wzpy.cn/system/2026/09/21/015590777.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "1029debff3b8",
-      "title": "刘捷检查第五届全球数字贸易博览会筹备工作时强调 做优服务 做精细节 确保办成一届更高水平精彩纷呈的数贸盛会",
-      "url": "http://www.wzpy.cn/system/2026/09/21/015590779.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "743c84afa4f1",
-      "title": "探营第五届数贸会主题展馆——前沿科技密集亮相 未来场景触手可及",
-      "url": "http://www.wzpy.cn/system/2026/09/21/015590781.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "70a8e7fc4997",
-      "title": "解码浙江丨没有方向盘的汽车、能上火星的AI 数贸会“镇馆之宝”件件硬核",
-      "url": "http://www.wzpy.cn/system/2026/09/21/015590783.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "4a8c3cfae1d8",
-      "title": "解码浙江丨从80000㎡到170000㎡ 数贸会“五年五台阶”",
-      "url": "http://www.wzpy.cn/system/2026/09/21/015590785.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "d44a522d0bf4",
-      "title": "去大脑里“转一转”、到火星上走一走，来数贸会提前触摸未来生活",
-      "url": "http://www.wzpy.cn/system/2026/09/21/015590787.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "61b689a14cd8",
-      "title": "宣传干部不妨多些问题意识",
-      "url": "http://www.wzpy.cn/system/2026/09/21/015590789.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "3e418e2fccdb",
-      "title": "【新思想引领新征程】大河安澜映初心",
-      "url": "http://www.wzpy.cn/system/2026/09/21/015590295.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "9a862404ee90",
-      "title": "看图学习·向新之翼丨这些总书记点赞过的工程重器“上新”了",
-      "url": "http://www.wzpy.cn/system/2026/09/20/015590153.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "bf892bc0798e",
-      "title": "定了！平阳站增开多趟列车",
-      "url": "http://www.wzpy.cn/system/2026/09/20/015589941.shtml",
+      "id": "32d0ac0a1cbe",
+      "title": "【要闻】孟晓斌调研公共服务一体化工作",
+      "url": "http://www.wzpy.cn/system/2026/09/22/015590881.shtml",
       "date": "",
       "source": "平阳新闻网"
     },
@@ -914,37 +935,16 @@
       "source": "平阳新闻网"
     },
     {
+      "id": "3bc760c85d08",
+      "title": "超方便！平阳社保卡服务网点增至100个",
+      "url": "http://www.wzpy.cn/system/2026/09/22/015590920.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
       "id": "099ddc36e848",
       "title": "【要闻】平阳“无水港”正式启用",
       "url": "http://www.wzpy.cn/system/2026/09/17/015589194.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "60d55b28a462",
-      "title": "【要闻】孟晓斌督导强城行动暨重点项目建设工作",
-      "url": "http://www.wzpy.cn/system/2026/09/17/015589010.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "6855d6237edb",
-      "title": "这笔社保补贴，平阳人可申请",
-      "url": "http://www.wzpy.cn/system/2026/09/20/015589939.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "d6924d8b1209",
-      "title": "“开局之年看中国·解码创新浙江——在温州看见创新中国”网络主题宣传活动在温州启动",
-      "url": "http://www.wzpy.cn/system/2026/09/16/015588672.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "4cc9e5ef4583",
-      "title": "筑牢智能时代安全防线！2026年温州市网络安全宣传周在瑞启幕",
-      "url": "http://www.wzpy.cn/system/2026/09/16/015588733.shtml",
       "date": "",
       "source": "平阳新闻网"
     }
