@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-19 09:31",
+  "updatedAt": "2026-10-21 09:52",
   "report": [
     {
       "source": "平阳新闻网",
@@ -19,7 +19,7 @@
     {
       "source": "温州网",
       "ok": true,
-      "count": 56
+      "count": 58
     }
   ],
   "items": [
@@ -739,9 +739,121 @@
       ]
     },
     {
-      "id": "8117a250aac3",
-      "title": "必胜丨革命理想高于天",
-      "url": "http://www.wzpy.cn/system/2026/10/19/015603373.shtml",
+      "id": "4bbc76737ca2",
+      "title": "弘扬伟大长征精神 走好今天的长征路",
+      "url": "http://www.wzpy.cn/system/2026/10/20/015604506.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "14f3a8e9601b",
+      "title": "长征，永远在路上",
+      "url": "http://www.wzpy.cn/system/2026/10/20/015604508.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "8f4747dab98b",
+      "title": "此行间·守护“地球之肾”！总书记强调“湿地保护贵在保持原生态”",
+      "url": "http://www.wzpy.cn/system/2026/10/20/015604510.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "7b3562954701",
+      "title": "【央视快评】持续加强政治培训 广泛凝聚政治共识",
+      "url": "http://www.wzpy.cn/system/2026/10/20/015604512.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "df3dfec16bc0",
+      "title": "总书记刚刚来过这里｜把黄旗海保护好",
+      "url": "http://www.wzpy.cn/system/2026/10/20/015604515.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "711c72c848da",
+      "title": "时习之丨建设这张“网” 总书记说“前景广阔”",
+      "url": "http://www.wzpy.cn/system/2026/10/20/015604400.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "9b14f9e711b5",
+      "title": "学习手记｜独立自主 走自己的路",
+      "url": "http://www.wzpy.cn/system/2026/10/20/015604406.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "625c580c6d33",
+      "title": "一习话·我们的长征路丨“走好我们这一代人的长征路”",
+      "url": "http://www.wzpy.cn/system/2026/10/20/015604414.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "be61aff4a771",
+      "title": "必胜丨为有牺牲多壮志",
+      "url": "http://www.wzpy.cn/system/2026/10/20/015604223.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "6345d38b2b5d",
+      "title": "经纬线·从黄旗海的变化，读懂美丽中国建设的题中之义",
+      "url": "http://www.wzpy.cn/system/2026/10/20/015604228.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "363e0146a098",
+      "title": "王浩在丽水调研时强调 因地制宜 产业富民 加快实现绿色发展高质量发展",
+      "url": "http://www.wzpy.cn/system/2026/10/20/015604087.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "1296ef0ef95a",
+      "title": "省政府党组第106次会议暨省政府第129次常务会议召开 刘捷主持",
+      "url": "http://www.wzpy.cn/system/2026/10/20/015604098.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "89294d31f4dd",
+      "title": "水乡之约 新意扑面 2026年世界互联网大会乌镇峰会启幕在即",
+      "url": "http://www.wzpy.cn/system/2026/10/20/015604105.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "b8ae2f0a24f0",
+      "title": "共赴智能互联新程 乌镇峰会“一展一会一赛一论坛”亮点速递",
+      "url": "http://www.wzpy.cn/system/2026/10/20/015604114.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "2dc88462346b",
+      "title": "这张榜单，照见各地政府网络透明度",
+      "url": "http://www.wzpy.cn/system/2026/10/20/015604125.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "a815cdbac60d",
+      "title": "绿色贸易壁垒高筑，浙江制造如何应对 突围之路，就在脚下",
+      "url": "http://www.wzpy.cn/system/2026/10/20/015604138.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "61394df0992f",
+      "title": "中国蓝观察丨广交世界 三成新品撬动外贸韧劲",
+      "url": "http://www.wzpy.cn/system/2026/10/20/015604160.shtml",
       "date": "",
       "source": "平阳新闻网"
     },
@@ -749,6 +861,13 @@
       "id": "8d88db9e146e",
       "title": "时政微纪录丨习近平总书记乌兰察布行",
       "url": "http://www.wzpy.cn/system/2026/10/19/015603381.shtml",
+      "date": "",
+      "source": "平阳新闻网"
+    },
+    {
+      "id": "8117a250aac3",
+      "title": "必胜丨革命理想高于天",
+      "url": "http://www.wzpy.cn/system/2026/10/19/015603373.shtml",
       "date": "",
       "source": "平阳新闻网"
     },
@@ -770,125 +889,6 @@
       "id": "6abf666b4f25",
       "title": "【新思想引领新征程】绘就幸福“夕阳红” 持续增进民生福祉",
       "url": "http://www.wzpy.cn/system/2026/10/19/015603398.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "6e19b5e2693a",
-      "title": "时政微观察丨内蒙古之行，总书记考察算力产业有何深意？",
-      "url": "http://www.wzpy.cn/system/2026/10/18/015603275.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "b2f17d2cb095",
-      "title": "人民领袖｜守护最美“夕阳红”",
-      "url": "http://www.wzpy.cn/system/2026/10/18/015603279.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "a002b4e4c94b",
-      "title": "学习·故事｜从一道热菜读懂总书记的敬老情",
-      "url": "http://www.wzpy.cn/system/2026/10/18/015603285.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "4e28d7464802",
-      "title": "习言道｜前景广阔！习近平部署这张“网”",
-      "url": "http://www.wzpy.cn/system/2026/10/18/015603291.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "b38c6a168c22",
-      "title": "拾光纪·一组对比照，看黄旗海生态蝶变",
-      "url": "http://www.wzpy.cn/system/2026/10/18/015603209.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "022d29a7479f",
-      "title": "学习新语｜一定要让老人们有个幸福的晚年",
-      "url": "http://www.wzpy.cn/system/2026/10/18/015603215.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "5fac0b08808e",
-      "title": "联播+｜考察绿色算力 总书记强调两个“协同”",
-      "url": "http://www.wzpy.cn/system/2026/10/18/015603226.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "fd534eb9e522",
-      "title": "第一观察丨从乌梁素海到黄旗海 总书记的生态关切一以贯之",
-      "url": "http://www.wzpy.cn/system/2026/10/18/015603141.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "e57fe5c42a2e",
-      "title": "视频丨厚植绿色根基 因地制宜推动高质量发展——总书记重要讲话引发热烈反响",
-      "url": "http://www.wzpy.cn/system/2026/10/18/015603143.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "c0bb2490151e",
-      "title": "“品诗画浙江 看美丽中国”总台精品节目浙江启播活动在杭举行 王浩慎海雄致辞",
-      "url": "http://www.wzpy.cn/system/2026/10/18/015603039.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "804260c7fd85",
-      "title": "2026长三角国际青年电影周在甬开幕 慎海雄刘捷王成启动活动",
-      "url": "http://www.wzpy.cn/system/2026/10/18/015603045.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "0e5a01a55b48",
-      "title": "在杭州良渚，看见未来中国：写在第四届“良渚论坛”开幕之际",
-      "url": "http://www.wzpy.cn/system/2026/10/18/015603051.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "2c246fff9db3",
-      "title": "从书记同席交流，看浙江县域发展新动向",
-      "url": "http://www.wzpy.cn/system/2026/10/18/015603055.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "3dd28ed89b19",
-      "title": "长三角国际青年电影周 “电影+”加出好年华",
-      "url": "http://www.wzpy.cn/system/2026/10/18/015603061.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "e6ba1ad14c62",
-      "title": "王浩在县（市、区）委书记工作交流会上强调 攻坚四季度夺取全年胜 全力以赴高质量完成全年经济社会发展目标任务 确保交出高质量发展和高水平安全良性互动的高分答卷 刘捷主持 廉毅敏王成出席",
-      "url": "http://www.wzpy.cn/system/2026/10/17/015602612.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "05f4e28a734e",
-      "title": "全省防御应对台风工作总结通报表扬暨坚强水网建设推进会召开 王浩出席并讲话",
-      "url": "http://www.wzpy.cn/system/2026/10/17/015602619.shtml",
-      "date": "",
-      "source": "平阳新闻网"
-    },
-    {
-      "id": "7238dd737aff",
-      "title": "政在看丨县（市、区）委书记工作交流会，重点讲了什么",
-      "url": "http://www.wzpy.cn/system/2026/10/17/015602626.shtml",
       "date": "",
       "source": "平阳新闻网"
     },
